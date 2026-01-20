@@ -8,11 +8,11 @@ def main_planner(guests: int) -> None:
     """calling functions below to return all values in a concise way"""
     print("A Cozy Tea Party for " + str(guests) + " People!")
     # need number of guests = people
-    print("Tea bags: " + str(tea_bags(people=guests)) + "")
+    print("Tea Bags: " + str(tea_bags(people=guests)) + "")
     print("Treats: " + str(treats(guests)) + "")
     # have to call upon tea_bags and treat_count for cost
     print(
-        "Cost: "
+        "Cost: $"
         + str(cost(tea_count=(tea_bags(people=guests)), treat_count=(treats(guests))))
         + ""
     )
@@ -28,9 +28,10 @@ def tea_bags(people: int) -> int:
 def treats(people: int) -> int:
     """determining the number of treats needed based on # of guests"""
     # call to tea_bags function
-    # multiply by 1.5 since we are calling # of tea bags
+    # multiply by 1.5 since we are defining keyword argument
     # guests want 1.5 treats per tea bag
-    return int(tea_bags(people) * (1.5))
+    # keyword argument is redefining function
+    return int((tea_bags(people=people)) * (1.5))
 
 
 # defining the cost function
